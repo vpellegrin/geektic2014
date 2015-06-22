@@ -1,15 +1,20 @@
 package com.ninja_squad.geektic.service;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Valentin on 22/06/2015.
  */
 @Entity
 public class Geek {
+    @ManyToMany
+    @JoinTable(name = "GEEKINTERET",
+            joinColumns = @JoinColumn(name = "ID_GEEK"),
+            inverseJoinColumns = @JoinColumn(name = "ID_INTERET"))
+    private Set<Interet> lesInterets;
     @Id
     private int id;
     private String nom;

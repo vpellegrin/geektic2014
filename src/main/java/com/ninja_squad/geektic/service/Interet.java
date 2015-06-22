@@ -2,8 +2,10 @@ package com.ninja_squad.geektic.service;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Valentin on 22/06/2015.
