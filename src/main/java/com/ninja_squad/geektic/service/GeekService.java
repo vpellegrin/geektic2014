@@ -28,7 +28,7 @@ public class GeekService {
 
 
     @RequestMapping(method = GET, params = {"sexe", "interet"})
-    public List<Geek> lesGeek(@RequestParam("sexe") String sexe, @RequestParam("interet") String interet) {
+    public List<Geek> lesGeek(@RequestParam("sexe") String sexe, @RequestParam("interet") int interet) {
 
         Geek g12 = new Geek();
 
