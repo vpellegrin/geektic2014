@@ -11,11 +11,7 @@ app.config(['$routeProvider',
                 templateUrl: 'search.html',
                 controller: 'SearchCtrl'
             }).
-            when('/geek', {
-                templateUrl: 'geek.html',
-                controller: 'GeekCtrl'
-            }).
-            when('/geeks', {
+            when('/geeks/:id', {
                 templateUrl: 'geeks.html',
                 controller: 'GeeksCtrl'
             }).
@@ -30,17 +26,26 @@ app.controller('IndexCtrl', function($scope, $http) {
 });
 
 app.controller('SearchCtrl', function($scope, $http) {
-    $http.get('/interets').success(function(interets) {
+    $http.get('api/interets').success(function(interets) {
         $scope.lesInterets = interets;
     });
 
     $scope.search = function(){
 
-        $http.get('/users', {
+        $http.get('api/geeks', {
             params: $scope.criteria
         }).success(function(lesGeeks) {
             $scope.lesGeeks = lesGeeks;
         });
 
     }
+});
+
+
+app.controller('GeeksCtrl', function($scope, $http, $routeParams) {
+    $http.get('api/geeks/' + $routeParams.id).success(function(leGeek) {
+        $scope.leGeek = leGeek;
+    });
+
+
 });

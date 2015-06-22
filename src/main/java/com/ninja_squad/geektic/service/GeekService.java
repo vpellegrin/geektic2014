@@ -2,6 +2,7 @@ package com.ninja_squad.geektic.service;
 
 import com.ninja_squad.geektic.model.GeekDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +19,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  */
 @RestController
 @Transactional
-@RequestMapping("/users")
+@RequestMapping("api/geeks")
 public class GeekService {
 
     @Autowired
@@ -32,6 +33,14 @@ public class GeekService {
         Geek g12 = new Geek();
 
         return dao.findBySexeAndInterest(sexe, interet);
+    }
+
+    @RequestMapping(method = GET, value="/{id}")
+    public Geek leGeek(@PathVariable("id") int id) {
+
+        Geek g12 = new Geek();
+
+        return dao.findById(id);
     }
 
 }

@@ -9,4 +9,16 @@
 
         <INPUT type="submit" value="Envoyer">
     </FORM>
+
+    <div>
+        <table>
+            <tr ng-repeat="item in lesGeeks">
+                <td>Nom : {{item.nom}}</td>
+                <td>Prenom : {{item.prenom}}</td>
+                <td>Mail : {{item.mail}}</td>
+                <td>Sexe : {{item.sexe}}</td>
+                <td><a href="#/geeks/{{item.id}}">Profil</a></td>
+            </tr>
+        </table>
+    </div>
 </div>

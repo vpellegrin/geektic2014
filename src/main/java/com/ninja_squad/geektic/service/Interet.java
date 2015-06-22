@@ -1,12 +1,16 @@
 package com.ninja_squad.geektic.service;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Valentin on 22/06/2015.
  */
+@Entity
 public class Interet {
+    @Id
     private int id;
     private String libelle;
     private String description;

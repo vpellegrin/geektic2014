@@ -1,5 +1,8 @@
 package com.ninja_squad.geektic.service;
 
+import com.ninja_squad.geektic.model.GeekDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,14 +19,19 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  */
 @RestController
 @Transactional
-@RequestMapping("/interets")
+@RequestMapping("api/interets")
 public class InteretService {
+
+
+
+    @Autowired
+    private GeekDao dao;
+
 
     @RequestMapping(method = GET)
     public List<Interet> lesInterets() {
-        Interet g12 = new Interet();
 
-        return g12.lesInterets();
+        return dao.interets();
     }
 
 }
