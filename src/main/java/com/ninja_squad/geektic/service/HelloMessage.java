@@ -5,7 +5,14 @@ package com.ninja_squad.geektic.service;
  * @author JB Nizet
  */
 public class HelloMessage {
+
+    private String message;
+
+    public HelloMessage(String message) {
+        this.message = message;
+    }
+
     public String getMessage() {
-        return "Hello, Geek!";
+        return message;
     }
 }

@@ -1,0 +1,12 @@
+<div>
+    <FORM ng-submit="search()">
+        <INPUT type= "radio" value="H" ng-model="criteria.sexe"> Homme
+        <INPUT type= "radio" value="F" checked ng-model="criteria.sexe"> Femme
+
+        <SELECT name="interet" size="1" ng-model="criteria.interet">
+            <OPTION ng-repeat="item in lesInterets" value="{{item.id}}">{{ item.libelle }}
+        </SELECT>
+
+        <INPUT type="submit" value="Envoyer">
+    </FORM>
+</div>

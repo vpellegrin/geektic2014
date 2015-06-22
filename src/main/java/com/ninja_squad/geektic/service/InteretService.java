@@ -16,24 +16,14 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  */
 @RestController
 @Transactional
-@RequestMapping("/api/hello")
-public class HelloService {
+@RequestMapping("/interets")
+public class InteretService {
 
-    public HelloMessage sayHello() {
-        HelloMessage hello = new HelloMessage("hello world");
-        return hello;
-    }
     @RequestMapping(method = GET)
-    public List<Geek> lesGeek() {
-        Geek g12 = new Geek();
+    public List<Interet> lesInterets() {
+        Interet g12 = new Interet();
 
-        return g12.lesGeeks();
+        return g12.lesInterets();
     }
 
-    @RequestMapping(method = GET, params = "id")
-    public Geek lesGeek(@RequestParam("id") int id) {
-        Geek g12 = new Geek();
-
-        return g12.lesGeekss(id);
-    }
 }

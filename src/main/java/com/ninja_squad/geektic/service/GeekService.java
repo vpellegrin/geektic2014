@@ -1,5 +1,7 @@
 package com.ninja_squad.geektic.service;
 
+import com.ninja_squad.geektic.model.GeekDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,24 +18,21 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  */
 @RestController
 @Transactional
-@RequestMapping("/api/hello")
-public class HelloService {
+@RequestMapping("/users")
+public class GeekService {
 
-    public HelloMessage sayHello() {
-        HelloMessage hello = new HelloMessage("hello world");
-        return hello;
-    }
-    @RequestMapping(method = GET)
-    public List<Geek> lesGeek() {
+    @Autowired
+    private GeekDao dao;
+
+
+
+    @RequestMapping(method = GET, params = {"sexe", "interet"})
+    public List<Geek> lesGeek(@RequestParam("sexe") String sexe, @RequestParam("interet") String interet) {
+
         Geek g12 = new Geek();
 
-        return g12.lesGeeks();
+        return dao.findBySexeAndInterest(sexe, interet);
     }
 
-    @RequestMapping(method = GET, params = "id")
-    public Geek lesGeek(@RequestParam("id") int id) {
-        Geek g12 = new Geek();
-
-        return g12.lesGeekss(id);
-    }
 }
+
