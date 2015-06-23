@@ -1,7 +1,12 @@
 <div>
+    <label for="woman"><img class="woman" alt="Brand" src="/img/woman.png"></label>
+    <label for="man"><img class="man" alt="Brand" src="/img/man.png"></label>
+
     <FORM ng-submit="search()">
-        <INPUT type= "radio" value="H" ng-model="criteria.sexe"> Homme
-        <INPUT type= "radio" value="F" checked ng-model="criteria.sexe"> Femme
+        <INPUT type="radio" id="woman" value="F" checked="checked" ng-checked=true ng-model="criteria.sexe"> Femme
+        <INPUT type="radio" id="man" value="H" ng-model="criteria.sexe"> Homme
+        <br />
+
 
         <SELECT name="interet" size="1" ng-model="criteria.interet">
             <OPTION ng-repeat="item in lesInterets" value="{{item.id}}">{{ item.libelle }}
