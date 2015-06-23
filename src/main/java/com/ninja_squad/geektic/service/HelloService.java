@@ -23,7 +23,7 @@ public class HelloService {
         HelloMessage hello = new HelloMessage("hello world");
         return hello;
     }
-    @RequestMapping(method = GET)
+    /*@RequestMapping(method = GET)
     public List<Geek> lesGeek() {
         Geek g12 = new Geek();
 
@@ -35,5 +35,5 @@ public class HelloService {
         Geek g12 = new Geek();
 
         return g12.lesGeekss(id);
-    }
+    }*/
 }

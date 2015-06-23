@@ -1,22 +1,51 @@
 <div>
-    <label for="woman"><img class="woman" alt="Brand" src="/img/woman.png"></label>
-    <label for="man"><img class="man" alt="Brand" src="/img/man.png"></label>
+
 
     <FORM ng-submit="search()">
-        <INPUT type="radio" id="woman" value="F" checked="checked" ng-checked=true ng-model="criteria.sexe"> Femme
+        <label for="woman"><img class="woman" alt="Brand" src="/img/woman.png"></label>
+        <label for="man"><img class="man" alt="Brand" src="/img/man.png"></label>
+        <INPUT type="radio" id="woman" value="F" ng-model="criteria.sexe"> Femme
         <INPUT type="radio" id="man" value="H" ng-model="criteria.sexe"> Homme
         <br />
 
+        <!--<div class="interet">
+            <label ng-repeat="item in lesInterets" for="{{item.libelle}}"><img class="test" alt="{{item.libelle}}" src="/img/interets/{{item.photo}}"></label>
+        </div>
+        <div class="interetradio">
+            <INPUT ng-repeat="item in lesInterets" type="radio" id="{{item.libelle}}" value="{{item.id}}" ng-model="criteria.interet">
+        </div>-->
 
         <SELECT name="interet" size="1" ng-model="criteria.interet">
             <OPTION ng-repeat="item in lesInterets" value="{{item.id}}">{{ item.libelle }}
         </SELECT>
 
-        <INPUT type="submit" value="Envoyer">
+        <INPUT class="btnsearch" type="submit" value="Trouver votre Geek">
     </FORM>
 
-    <div>
-        <table>
+
+
+    <div >
+        <!--<div class="list-group">
+            <a ng-repeat="item in lesGeeks" href="#/geeks/{{item.id}}" class="list-group-item">
+                <h4 class="list-group-item-heading">{{item.nom}} {{item.prenom}}</h4>
+                <p class="list-group-item-text">{{item.mail}}</p>
+                <p class="list-group-item-text">{{item.sexe}}</p>
+            </a>
+        </div>-->
+
+        <div class="row">
+            <div ng-repeat="item in lesGeeks" class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="/img/photos/{{item.photo}}" alt="geek">
+                    <div class="caption">
+                        <h3>{{item.nom}} {{item.prenom}}</h3>
+                        <p>{{item.description_courte}}</p>
+                        <p><a href="#/geeks/{{item.id}}" class="btn btn-primary" role="button">Visite le profil de ton Geek</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<table>
             <tr ng-repeat="item in lesGeeks">
                 <td>Nom : {{item.nom}}</td>
                 <td>Prenom : {{item.prenom}}</td>
@@ -24,6 +53,6 @@
                 <td>Sexe : {{item.sexe}}</td>
                 <td><a href="#/geeks/{{item.id}}">Profil</a></td>
             </tr>
-        </table>
+        </table>-->
     </div>
 </div>

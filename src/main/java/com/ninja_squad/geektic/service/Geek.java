@@ -21,13 +21,19 @@ public class Geek {
     private String prenom;
     private String mail;
     private String sexe;
+    private String photo;
+    private String description_courte;
+    private String description_longue;
 
-    public Geek (int id, String nom, String prenom, String mail, String sexe){
+    public Geek (int id, String nom, String prenom, String mail, String sexe, String photo, String description_courte, String description_longue){
         this.setId(id);
         this.setNom(nom);
         this.setPrenom(prenom);
         this.setMail(mail);
         this.setSexe(sexe);
+        this.setPhoto(photo);
+        this.setDescription_courte(description_courte);
+        this.setDescription_longue(description_longue);
     }
 
     public Geek(){}
@@ -72,7 +78,7 @@ public class Geek {
         this.sexe = sexe;
     }
 
-    public List<Geek> lesGeeks(){
+    /*public List<Geek> lesGeeks(){
         Geek g1 = new Geek(0001, "DUPONT", "Jean", "jean.dupont@gmail.com", "H");
         Geek g2 = new Geek(0002, "GOUNON", "Damien", "damien.gounon@gmail.com", "H");
         Geek g3 = new Geek(0003, "SAPET", "Paul", "paul.sapet@gmail.com", "H");
@@ -113,5 +119,29 @@ public class Geek {
 
 
         return g5;
+    }*/
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getDescription_courte() {
+        return description_courte;
+    }
+
+    public void setDescription_courte(String description_courte) {
+        this.description_courte = description_courte;
+    }
+
+    public String getDescription_longue() {
+        return description_longue;
+    }
+
+    public void setDescription_longue(String description_longue) {
+        this.description_longue = description_longue;
     }
 }

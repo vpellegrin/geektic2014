@@ -2,10 +2,8 @@ package com.ninja_squad.geektic.service;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Valentin on 22/06/2015.
@@ -15,19 +13,19 @@ public class Interet {
     @Id
     private int id;
     private String libelle;
-    private String description;
+    private String photo;
 
-    public Interet(int id, String libelle, String description){
+    public Interet(int id, String libelle, String photo){
         this.setId(id);
         this.setLibelle(libelle);
-        this.setDescription(description);
+        this.setPhoto(photo);
     }
     public Interet(){}
 
     public List<Interet> lesInterets(){
-        Interet g1 = new Interet(0001, "PHP", "WAOUUUUUUU ici on aime le PHP et on parle de PHP");
-        Interet g2 = new Interet(0002, "C#", "WAOUUUUUUU ici on aime le C# et on parle de C#");
-        Interet g3 = new Interet(0003, "JAVA", "WAOUUUUUUU ici on aime le JAVA et on parle de JAVA");
+        Interet g1 = new Interet(0001, "PHP", "php.png");
+        Interet g2 = new Interet(0002, "C#", "csharp.png");
+        Interet g3 = new Interet(0003, "JAVA", "java.png");
 
         ArrayList lesInteret = new ArrayList();
         lesInteret.add(g1);
@@ -52,11 +50,11 @@ public class Interet {
         this.libelle = libelle;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
