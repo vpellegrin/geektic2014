@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 public class Interet {
     @Id
-    private int id;
+    private Integer id;
     private String libelle;
     private String photo;
 

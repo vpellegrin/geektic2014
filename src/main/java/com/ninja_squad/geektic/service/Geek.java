@@ -16,7 +16,7 @@ public class Geek {
             inverseJoinColumns = @JoinColumn(name = "ID_INTERET"))
     private Set<Interet> lesInterets;
     @Id
-    private int id;
+    private Integer id;
     private String nom;
     private String prenom;
     private String mail;
@@ -144,4 +144,6 @@ public class Geek {
     public void setDescription_longue(String description_longue) {
         this.description_longue = description_longue;
     }
+
+
 }

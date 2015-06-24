@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
 import java.util.List;
@@ -36,11 +37,14 @@ public class GeekService {
     }
 
     @RequestMapping(method = GET, value="/{id}")
-    public Geek leGeek(@PathVariable("id") int id) {
+    public DetailsGeek leGeek(@PathVariable("id") int id, HttpServletRequest request) {
 
         Geek g12 = new Geek();
 
-        return dao.findById(id);
+        dao.visite(id, request.getRemoteAddr());
+
+//        return dao.findById(id);
+        return dao.findByIdDetail(id);
     }
 
 }

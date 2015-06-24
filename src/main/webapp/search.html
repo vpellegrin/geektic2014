@@ -8,17 +8,17 @@
         <INPUT type="radio" id="man" value="H" ng-model="criteria.sexe"> Homme
         <br />
 
-        <!--<div class="interet">
+        <div class="interet">
             <label ng-repeat="item in lesInterets" for="{{item.libelle}}"><img class="test" alt="{{item.libelle}}" src="/img/interets/{{item.photo}}"></label>
         </div>
         <div class="interetradio">
             <INPUT ng-repeat="item in lesInterets" type="radio" id="{{item.libelle}}" value="{{item.id}}" ng-model="criteria.interet">
-        </div>-->
+        </div>
 
-        <SELECT name="interet" size="1" ng-model="criteria.interet">
+        <!--<SELECT name="interet" size="1" ng-model="criteria.interet">
             <OPTION ng-repeat="item in lesInterets" value="{{item.id}}">{{ item.libelle }}
         </SELECT>
-
+-->
         <INPUT class="btnsearch" type="submit" value="Trouver votre Geek">
     </FORM>
 

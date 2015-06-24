@@ -29,6 +29,7 @@ app.controller('SearchCtrl', function($scope, $http) {
     $http.get('api/interets').success(function(interets) {
         $scope.lesInterets = interets;
     });
+    $scope.criteria = [];
 
     $scope.search = function(){
 
@@ -39,6 +40,8 @@ app.controller('SearchCtrl', function($scope, $http) {
         });
 
     }
+
+
 });
 
 
