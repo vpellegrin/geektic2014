@@ -1,4 +1,4 @@
-package com.ninja_squad.geektic.service;
+package com.ninja_squad.geektic.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,24 +15,18 @@ public class Interet {
     private String libelle;
     private String photo;
 
+    //CONSTRUCTEURS
+
+    public Interet(){}
+
     public Interet(int id, String libelle, String photo){
         this.setId(id);
         this.setLibelle(libelle);
         this.setPhoto(photo);
     }
-    public Interet(){}
 
-    public List<Interet> lesInterets(){
-        Interet g1 = new Interet(0001, "PHP", "php.png");
-        Interet g2 = new Interet(0002, "C#", "csharp.png");
-        Interet g3 = new Interet(0003, "JAVA", "java.png");
 
-        ArrayList lesInteret = new ArrayList();
-        lesInteret.add(g1);
-        lesInteret.add(g2);
-        lesInteret.add(g3);
-        return lesInteret;
-    }
+    //GETTER SETTER
 
     public int getId() {
         return id;

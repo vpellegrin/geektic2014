@@ -10,7 +10,7 @@ import static com.ninja_squad.dbsetup.operation.CompositeOperation.sequenceOf;
  * Created by Valentin on 24/06/2015.
  */
 public class CommonOperations {
-    public static final Operation DELETE_ALL = deleteAllFrom("GEEKINTERET", "GEEK", "INTERET");
+    public static final Operation DELETE_ALL = deleteAllFrom("GEEKINTERET", "AUDIT", "GEEK", "INTERET");
 
     public static final Operation INSERT_REFERENCE_DATA =
             sequenceOf(

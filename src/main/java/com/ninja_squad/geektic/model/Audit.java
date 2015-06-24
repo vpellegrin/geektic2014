@@ -1,4 +1,4 @@
-package com.ninja_squad.geektic.service;
+package com.ninja_squad.geektic.model;
 
 import javax.persistence.*;
 
@@ -14,11 +14,17 @@ public class Audit {
     @JoinColumn(name = "ID_GEEK")
     private Geek unGeek;
 
+    //CONSTRUCTEURS
+
+    public Audit(){}
+
     public Audit(String heure, String ip, Geek unGeek){
         this.setHeure(heure);
         this.setIp(ip);
         this.setUnGeek(unGeek);
     }
+
+    //GETTER SETTER
 
     public String getHeure() {
         return heure;

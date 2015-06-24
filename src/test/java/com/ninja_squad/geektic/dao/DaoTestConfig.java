@@ -21,7 +21,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableTransactionManagement(proxyTargetClass = true)
-@ComponentScan("com.ninja_squad.geektic.model")
+@ComponentScan("com.ninja_squad.geektic.dao")
 public class DaoTestConfig {
 
     @Bean

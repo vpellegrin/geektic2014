@@ -1,6 +1,7 @@
-package com.ninja_squad.geektic.service;
+package com.ninja_squad.geektic.model;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.ninja_squad.geektic.model.Geek;
 
 /**
  * Created by Valentin on 24/06/2015.
@@ -10,10 +11,16 @@ public class DetailsGeek {
     private Geek unGeek;
     private int vues;
 
+    //CONSTRUCTEURS
+
+    public DetailsGeek(){}
+
     public DetailsGeek(Geek unGeek, int vues){
         this.setUnGeek(unGeek);
         this.setVues(vues);
     }
+
+    //GETTER SETTER
 
     public Geek getUnGeek() {
         return unGeek;

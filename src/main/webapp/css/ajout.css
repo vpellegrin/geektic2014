@@ -83,6 +83,7 @@
     text-shadow:2px 2px 0px #154682;
     margin-left: 720px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .btnsearch:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
@@ -100,7 +101,7 @@
 }
 
 .background {
-    background-image: url("/img/intello.jpg");
+    background-image: url("/img/accueil/intello.jpg");
     height: 667px;
 }
 .man {
@@ -117,7 +118,7 @@ input#man {
 input#woman {
     margin-left: 480px;
 }
-.test {
+.photosearch {
     width: 150px;
 }
 .interet {
@@ -130,3 +131,15 @@ input#woman {
 .interetradio input {
     margin-left: 135px;
 }
+.photoGeek {
+    width: 25%;
+    float: left;
+    margin-left: 420px;
+    margin-top: 50px;
+}
+.list-group {
+    float: left;
+    font-size: 20px;
+    margin-top: 150px;
+}
+

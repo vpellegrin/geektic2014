@@ -1,25 +1,19 @@
 <div>
-
-
     <FORM ng-submit="search()">
-        <label for="woman"><img class="woman" alt="Brand" src="/img/woman.png"></label>
-        <label for="man"><img class="man" alt="Brand" src="/img/man.png"></label>
+        <label for="woman"><img class="woman" alt="Brand" src="/img/search/woman.png"></label>
+        <label for="man"><img class="man" alt="Brand" src="/img/search/man.png"></label>
         <INPUT type="radio" id="woman" value="F" ng-model="criteria.sexe"> Femme
         <INPUT type="radio" id="man" value="H" ng-model="criteria.sexe"> Homme
         <br />
 
         <div class="interet">
-            <label ng-repeat="item in lesInterets" for="{{item.libelle}}"><img class="test" alt="{{item.libelle}}" src="/img/interets/{{item.photo}}"></label>
+            <label ng-repeat="item in lesInterets" for="{{item.libelle}}"><img class="photosearch" alt="{{item.libelle}}" src="/img/interets/{{item.photo}}"></label>
         </div>
         <div class="interetradio">
             <INPUT ng-repeat="item in lesInterets" type="radio" id="{{item.libelle}}" value="{{item.id}}" ng-model="criteria.interet">
         </div>
 
-        <!--<SELECT name="interet" size="1" ng-model="criteria.interet">
-            <OPTION ng-repeat="item in lesInterets" value="{{item.id}}">{{ item.libelle }}
-        </SELECT>
--->
-        <INPUT class="btnsearch" type="submit" value="Trouver votre Geek">
+        <INPUT ng-show="lesInterets" class="btnsearch" type="submit" value="Trouver votre Geek">
     </FORM>
 
 

@@ -1,6 +1,8 @@
 package com.ninja_squad.geektic.service;
 
-import com.ninja_squad.geektic.model.GeekDao;
+import com.ninja_squad.geektic.dao.GeekDao;
+import com.ninja_squad.geektic.model.DetailsGeek;
+import com.ninja_squad.geektic.model.Geek;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,22 +29,17 @@ public class GeekService {
     private GeekDao dao;
 
 
-
+    //Appel du DAO pour la recherche par sexe et interet grace au parametres de l'appel AJAX
     @RequestMapping(method = GET, params = {"sexe", "interet"})
     public List<Geek> lesGeek(@RequestParam("sexe") String sexe, @RequestParam("interet") int interet) {
-
-        Geek g12 = new Geek();
-
         return dao.findBySexeAndInterest(sexe, interet);
     }
 
+    //Appel du DAO pour la recherche d'un geek grace a l'id passé en parametres de l'appel AJAX
     @RequestMapping(method = GET, value="/{id}")
     public DetailsGeek leGeek(@PathVariable("id") int id, HttpServletRequest request) {
 
-        Geek g12 = new Geek();
-
         dao.visite(id, request.getRemoteAddr());
-
 //        return dao.findById(id);
         return dao.findByIdDetail(id);
     }

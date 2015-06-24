@@ -1,11 +1,8 @@
 package com.ninja_squad.geektic.dao;
 
 import com.ninja_squad.dbsetup.DbSetup;
-import com.ninja_squad.dbsetup.Operations;
 import com.ninja_squad.dbsetup.operation.Operation;
-import com.ninja_squad.geektic.dao.*;
-import com.ninja_squad.geektic.model.GeekDao;
-import com.ninja_squad.geektic.service.Geek;
+import com.ninja_squad.geektic.model.Geek;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

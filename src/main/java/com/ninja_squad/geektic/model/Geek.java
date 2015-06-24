@@ -1,8 +1,6 @@
-package com.ninja_squad.geektic.service;
+package com.ninja_squad.geektic.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -25,6 +23,10 @@ public class Geek {
     private String description_courte;
     private String description_longue;
 
+    //CONSTRUCTEURS
+
+    public Geek(){}
+
     public Geek (int id, String nom, String prenom, String mail, String sexe, String photo, String description_courte, String description_longue){
         this.setId(id);
         this.setNom(nom);
@@ -36,7 +38,7 @@ public class Geek {
         this.setDescription_longue(description_longue);
     }
 
-    public Geek(){}
+    //GETTER SETTER
 
     public int getId() {
         return id;
@@ -78,49 +80,6 @@ public class Geek {
         this.sexe = sexe;
     }
 
-    /*public List<Geek> lesGeeks(){
-        Geek g1 = new Geek(0001, "DUPONT", "Jean", "jean.dupont@gmail.com", "H");
-        Geek g2 = new Geek(0002, "GOUNON", "Damien", "damien.gounon@gmail.com", "H");
-        Geek g3 = new Geek(0003, "SAPET", "Paul", "paul.sapet@gmail.com", "H");
-
-        ArrayList lesGEEKS = new ArrayList();
-        lesGEEKS.add(g1);
-        lesGEEKS.add(g2);
-        lesGEEKS.add(g3);
-        return lesGEEKS;
-    }
-    public List<Geek> searchGeek(String sexe, String interet){
-        Geek g1 = new Geek(0001, "DUPONT", "Jean", "jean.dupont@gmail.com", "H");
-        Geek g2 = new Geek(0002, "GOUNON", "Damien", "damien.gounon@gmail.com", "H");
-        Geek g3 = new Geek(0003, "SAPET", "Paul", "paul.sapet@gmail.com", "H");
-
-        ArrayList lesGEEKS = new ArrayList();
-        lesGEEKS.add(g1);
-        lesGEEKS.add(g2);
-        lesGEEKS.add(g3);
-        return lesGEEKS;
-    }
-    public Geek lesGeekss(int id){
-        Geek g1 = new Geek(0001, "DUPONT", "Jean", "jean.dupont@gmail.com", "H");
-        Geek g2 = new Geek(0002, "GOUNON", "Damien", "damien.gounon@gmail.com", "H");
-        Geek g3 = new Geek(0003, "SAPET", "Paul", "paul.sapet@gmail.com", "H");
-        Geek g4 = new Geek(0005, "erreur", "erreur", "erreur", "erreur");
-        Geek g5;
-
-        if (id == 1){
-            g5=g1;
-        }else if (id == 2){
-            g5=g2;
-        }else if (id == 3){
-            g5=g3;
-        }else{
-            g5=g4;
-        }
-
-
-        return g5;
-    }*/
-
     public String getPhoto() {
         return photo;
     }
@@ -145,5 +104,6 @@ public class Geek {
         this.description_longue = description_longue;
     }
 
+    //FIN GETTER SETTER
 
 }
