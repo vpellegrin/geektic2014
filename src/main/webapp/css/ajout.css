@@ -132,7 +132,7 @@ input#woman {
     margin-left: 135px;
 }
 .photoGeek {
-    width: 25%;
+    width: 35%;
     float: left;
     margin-left: 420px;
     margin-top: 50px;
@@ -140,6 +140,7 @@ input#woman {
 .list-group {
     float: left;
     font-size: 20px;
-    margin-top: 150px;
+    margin-top: 98px;
+    max-width: 445px;
 }
 
